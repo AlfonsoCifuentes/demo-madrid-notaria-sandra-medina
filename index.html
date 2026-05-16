@@ -3,641 +3,459 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Notaría Sandra María Medina Gonzálvez · Madrid Salamanca</title>
-<meta name="description" content="Notaría en el barrio de Salamanca, Madrid. Servicios notariales: compraventas, herencias, testamentos, poderes. Cita previa: 917819249.">
+<title>Notaría Sandra Medina — Barrio de Salamanca, Madrid</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Georgia&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
-    --azul: #1A2F5A;
-    --azul-medio: #2A4A8A;
-    --crema: #F2F0EB;
-    --tierra: #8B7355;
-    --tierra-claro: #C4A882;
-    --gris: #5A5A5A;
-    --blanco: #FFFFFF;
-    --sombra: rgba(26,47,90,0.08);
+    --navy: #1A2F5A;
+    --cream: #F2F0EB;
+    --tan: #8B7355;
+    --tan-light: #C4A882;
+    --warm-white: #FDFCFA;
+    --dark: #2A2A2A;
+    --gray: #7A7060;
+    --border: #D8D2C5;
+    --gold-line: #8B7355;
   }
-
   html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'Source Serif 4', 'Georgia', serif;
-    color: var(--azul);
-    background: var(--crema);
-    line-height: 1.75;
-  }
+  body { font-family: 'Source Serif 4', serif; color: var(--dark); background: var(--warm-white); }
 
   /* NAV */
   nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    background: var(--crema);
-    border-bottom: 1px solid rgba(139,115,85,0.25);
-    padding: 0 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 72px;
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: var(--navy); display: flex; align-items: center;
+    justify-content: space-between; padding: 0 6%; height: 74px;
+    border-bottom: 3px solid var(--tan);
   }
-  .nav-brand {
-    display: flex;
-    flex-direction: column;
-    text-decoration: none;
+  .nav-brand { display: flex; flex-direction: column; }
+  .nav-name { font-family: 'Playfair Display', serif; color: white; font-size: 1.1rem; font-weight: 600; letter-spacing: 0.03em; }
+  .nav-subtitle { font-size: 0.65rem; color: rgba(255,255,255,0.5); letter-spacing: 0.2em; text-transform: uppercase; margin-top: 1px; }
+  .nav-seal {
+    width: 42px; height: 42px; border: 1.5px solid rgba(139,115,85,0.5);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
   }
-  .nav-brand-name {
-    font-family: 'Playfair Display', serif;
-    color: var(--azul);
-    font-size: 1.05rem;
-    line-height: 1.2;
-    font-weight: 600;
-  }
-  .nav-brand-sub {
-    font-size: 0.7rem;
-    color: var(--tierra);
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-  }
-  .nav-links {
-    display: flex;
-    gap: 2.5rem;
-    list-style: none;
-  }
-  .nav-links a {
-    color: var(--gris);
-    text-decoration: none;
-    font-size: 0.85rem;
-    letter-spacing: 0.05em;
-    transition: color 0.3s;
-  }
-  .nav-links a:hover { color: var(--azul); }
+  .nav-seal svg { width: 22px; height: 22px; stroke: var(--tan); fill: none; stroke-width: 1.5; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.8rem; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; font-family: 'Source Serif 4', serif; }
+  .nav-links a:hover { color: var(--tan-light); }
   .nav-cta {
-    background: var(--azul);
-    color: var(--crema) !important;
-    padding: 0.55rem 1.4rem;
-    font-size: 0.82rem;
-    letter-spacing: 0.08em;
+    background: transparent; color: var(--tan-light); border: 1px solid var(--tan);
+    padding: 0.5rem 1.3rem; font-family: 'Source Serif 4', serif; font-size: 0.78rem;
+    letter-spacing: 0.06em; cursor: pointer; transition: all 0.25s; text-decoration: none; display: inline-block;
   }
-  .nav-cta:hover { background: var(--azul-medio) !important; color: var(--crema) !important; }
+  .nav-cta:hover { background: var(--tan); color: white; }
 
-  /* HERO — split layout */
+  /* HERO */
   .hero {
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding-top: 72px;
+    min-height: 100vh; background: var(--navy);
+    display: flex; align-items: center; padding: 74px 0 0;
+    position: relative; overflow: hidden;
   }
-  .hero-left {
-    background: var(--azul);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 5rem 4rem;
+  .hero-bg-text {
+    position: absolute; bottom: -2rem; right: -1rem;
+    font-family: 'Playfair Display', serif; font-size: 22vw; font-weight: 700;
+    color: rgba(255,255,255,0.02); line-height: 1; user-select: none; pointer-events: none;
+    white-space: nowrap;
   }
-  .hero-tag {
-    font-size: 0.72rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--tierra-claro);
-    margin-bottom: 2rem;
+  .hero-content {
+    width: 100%; padding: 80px 6%;
+    display: grid; grid-template-columns: 1fr 420px; gap: 5rem; align-items: center;
   }
-  .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 3.5vw, 3.2rem);
-    color: var(--crema);
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
-    font-weight: 400;
+  .hero-left { position: relative; z-index: 1; }
+  .hero-ornament {
+    display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;
   }
-  .hero h1 em {
-    font-style: italic;
-    color: var(--tierra-claro);
+  .ornament-line { height: 1px; width: 50px; background: var(--tan); }
+  .ornament-text { font-size: 0.7rem; color: var(--tan-light); letter-spacing: 0.2em; text-transform: uppercase; font-family: 'Source Serif 4', serif; }
+  .hero-left h1 {
+    font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+    color: white; line-height: 1.25; font-weight: 600; margin-bottom: 1.5rem;
+    letter-spacing: 0.01em;
   }
-  .hero-desc {
-    color: rgba(242,240,235,0.7);
-    font-size: 1rem;
-    font-weight: 300;
-    max-width: 400px;
-    margin-bottom: 2.5rem;
+  .hero-left h1 em { color: var(--tan-light); font-style: italic; }
+  .hero-left p { font-size: 1rem; color: rgba(255,255,255,0.65); line-height: 1.85; margin-bottom: 2.5rem; max-width: 480px; font-weight: 300; }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3.5rem; }
+  .btn-tan {
+    background: var(--tan); color: white; padding: 0.95rem 2.2rem;
+    font-family: 'Source Serif 4', serif; font-size: 0.88rem; letter-spacing: 0.08em;
+    border: none; cursor: pointer; transition: background 0.25s, transform 0.2s;
+    text-decoration: none; display: inline-block;
   }
-  .hero-actions { display: flex; flex-direction: column; gap: 1rem; max-width: 280px; }
-  .btn-gold {
-    display: block;
-    background: var(--tierra);
-    color: var(--crema);
-    padding: 0.9rem 1.5rem;
-    text-align: center;
-    font-size: 0.82rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: background 0.3s;
-  }
-  .btn-gold:hover { background: var(--tierra-claro); }
+  .btn-tan:hover { background: var(--tan-light); color: var(--navy); transform: translateY(-2px); }
   .btn-outline {
-    display: block;
-    border: 1px solid rgba(242,240,235,0.3);
-    color: rgba(242,240,235,0.8);
-    padding: 0.9rem 1.5rem;
-    text-align: center;
-    font-size: 0.82rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: border-color 0.3s;
+    background: transparent; color: rgba(255,255,255,0.8); padding: 0.95rem 2.2rem;
+    border: 1px solid rgba(255,255,255,0.3); font-family: 'Source Serif 4', serif;
+    font-size: 0.88rem; letter-spacing: 0.04em; cursor: pointer; transition: all 0.25s;
+    text-decoration: none; display: inline-block;
   }
-  .btn-outline:hover { border-color: var(--tierra-claro); color: var(--crema); }
-  .hero-right {
-    position: relative;
-    overflow: hidden;
-  }
-  .hero-right img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-  .hero-right-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(26,47,90,0.15) 0%, transparent 60%);
-  }
+  .btn-outline:hover { border-color: var(--tan); color: var(--tan-light); }
+  .hero-features { display: flex; gap: 2rem; flex-wrap: wrap; }
+  .hero-feature { display: flex; align-items: center; gap: 0.6rem; }
+  .hero-feature svg { width: 16px; height: 16px; stroke: var(--tan); fill: none; stroke-width: 2; }
+  .hero-feature span { font-size: 0.8rem; color: rgba(255,255,255,0.6); letter-spacing: 0.04em; }
 
-  /* SELLO NOTARIAL */
-  .sello-strip {
-    background: var(--tierra);
-    padding: 1.2rem 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 3rem;
-    flex-wrap: wrap;
+  .hero-right { position: relative; z-index: 1; }
+  .notary-card {
+    background: var(--cream); padding: 3rem 2.5rem;
+    border-top: 4px solid var(--tan); position: relative;
   }
-  .sello-item {
-    color: rgba(242,240,235,0.85);
-    font-size: 0.78rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
+  .notary-card::before {
+    content: ''; position: absolute; bottom: -8px; right: -8px;
+    width: 100%; height: 100%; border: 1px solid rgba(139,115,85,0.3); z-index: -1;
   }
-  .sello-item svg { opacity: 0.75; }
+  .notary-seal { display: flex; justify-content: center; margin-bottom: 2rem; }
+  .seal-circle {
+    width: 80px; height: 80px; border: 2px solid var(--tan); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; position: relative;
+  }
+  .seal-circle svg { width: 36px; height: 36px; stroke: var(--navy); fill: none; stroke-width: 1.2; }
+  .notary-card h3 { font-family: 'Playfair Display', serif; text-align: center; font-size: 1.1rem; color: var(--navy); font-weight: 600; margin-bottom: 0.3rem; }
+  .notary-card .subtitle { text-align: center; font-size: 0.72rem; color: var(--gray); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+  .notary-services-list { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 2rem; }
+  .notary-services-list li { display: flex; align-items: center; gap: 0.8rem; font-size: 0.88rem; color: var(--dark); }
+  .notary-services-list li svg { width: 14px; height: 14px; stroke: var(--tan); fill: none; stroke-width: 2; flex-shrink: 0; }
+  .notary-card-cta {
+    width: 100%; background: var(--navy); color: white; border: none;
+    padding: 0.9rem; font-family: 'Source Serif 4', serif; font-size: 0.9rem;
+    letter-spacing: 0.06em; cursor: pointer; transition: background 0.2s;
+  }
+  .notary-card-cta:hover { background: var(--tan); }
 
-  /* SECTIONS */
-  section { padding: 5.5rem 3rem; }
-  .container { max-width: 1100px; margin: 0 auto; }
-  .section-label {
-    font-size: 0.7rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--tierra);
-    margin-bottom: 0.8rem;
-    display: block;
-  }
-  .section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.8rem, 2.5vw, 2.5rem);
-    line-height: 1.2;
-    color: var(--azul);
-    margin-bottom: 1.2rem;
-    font-weight: 400;
-  }
-  .section-body {
-    color: var(--gris);
-    font-weight: 300;
-    font-size: 1rem;
-    max-width: 580px;
-  }
-  .divider {
-    width: 50px;
-    height: 2px;
-    background: var(--tierra);
-    margin: 1.5rem 0;
-  }
+  /* SERVICES */
+  section { padding: 100px 6%; }
+  .divider { width: 50px; height: 2px; background: var(--tan); margin-bottom: 1.5rem; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.5rem); color: var(--navy); line-height: 1.2; font-weight: 600; margin-bottom: 1rem; }
+  .section-title em { font-style: italic; color: var(--tan); }
+  .section-sub { font-size: 0.95rem; color: var(--gray); line-height: 1.85; max-width: 520px; font-weight: 300; }
+  .section-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--tan); margin-bottom: 0.6rem; }
 
-  /* SERVICIOS */
-  .servicios { background: var(--blanco); }
-  .servicios-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1px;
-    margin-top: 3.5rem;
-    background: var(--crema);
+  .services { background: var(--cream); }
+  .services-header { margin-bottom: 3.5rem; }
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5px; background: var(--border); }
+  .service-card {
+    background: var(--warm-white); padding: 2.5rem 2rem;
+    border-top: 3px solid transparent; transition: border-color 0.25s, background 0.25s;
   }
-  .servicio-card {
-    background: var(--blanco);
-    padding: 2.5rem;
-    transition: background 0.3s;
-  }
-  .servicio-card:hover { background: var(--azul); }
-  .servicio-card:hover .servicio-title,
-  .servicio-card:hover .servicio-desc { color: var(--crema); }
-  .servicio-card:hover .servicio-icon { color: var(--tierra-claro); }
-  .servicio-icon {
-    color: var(--tierra);
-    margin-bottom: 1.2rem;
-    transition: color 0.3s;
-  }
-  .servicio-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
-    color: var(--azul);
-    margin-bottom: 0.6rem;
-    font-weight: 600;
-    transition: color 0.3s;
-  }
-  .servicio-desc {
-    font-size: 0.88rem;
-    color: var(--gris);
-    line-height: 1.6;
-    transition: color 0.3s;
-  }
+  .service-card:hover { border-top-color: var(--tan); background: white; }
+  .service-icon { margin-bottom: 1.5rem; }
+  .service-icon svg { width: 32px; height: 32px; stroke: var(--tan); fill: none; stroke-width: 1.2; }
+  .service-card h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--navy); font-weight: 600; margin-bottom: 0.6rem; }
+  .service-card p { font-size: 0.88rem; color: var(--gray); line-height: 1.7; font-weight: 300; }
 
-  /* QUIÉN SOY */
-  .quiensoy { background: var(--crema); }
-  .quiensoy-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.4fr;
-    gap: 5rem;
-    align-items: center;
+  /* PROCESS */
+  .process { background: var(--warm-white); }
+  .process-header { max-width: 600px; margin-bottom: 4rem; }
+  .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 3rem; }
+  .process-step { }
+  .process-num {
+    font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--cream);
+    font-weight: 700; line-height: 1; margin-bottom: 1rem; position: relative; display: inline-block;
   }
-  .quiensoy-img img {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-    display: block;
-    filter: grayscale(0.1);
-  }
-  .colegio-badge {
-    background: var(--azul);
-    color: var(--crema);
-    display: inline-block;
-    padding: 0.5rem 1.2rem;
-    font-size: 0.75rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin-bottom: 2rem;
-  }
+  .process-num::after { content: ''; position: absolute; bottom: 0; left: 0; width: 30px; height: 2px; background: var(--tan); }
+  .process-step h4 { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--navy); font-weight: 600; margin-bottom: 0.6rem; }
+  .process-step p { font-size: 0.88rem; color: var(--gray); line-height: 1.65; font-weight: 300; }
 
-  /* PROCESO */
-  .proceso { background: var(--azul); }
-  .proceso .section-title { color: var(--crema); }
-  .proceso .section-label { color: var(--tierra-claro); }
-  .proceso .section-body { color: rgba(242,240,235,0.65); }
-  .proceso .divider { background: var(--tierra-claro); }
-  .proceso-list {
-    margin-top: 3.5rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 3rem;
-  }
-  .proceso-item { }
-  .proceso-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    color: rgba(139,115,85,0.3);
-    line-height: 1;
-    margin-bottom: 0.5rem;
-  }
-  .proceso-item-title {
-    font-family: 'Playfair Display', serif;
-    color: var(--crema);
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-  }
-  .proceso-item-desc {
-    color: rgba(242,240,235,0.6);
-    font-size: 0.88rem;
-    font-weight: 300;
-  }
+  /* TRUST */
+  .trust-section { background: var(--navy); padding: 80px 6%; }
+  .trust-inner { max-width: 960px; margin: 0 auto; }
+  .trust-header { text-align: center; margin-bottom: 3.5rem; }
+  .trust-header .section-title { color: white; margin-bottom: 0; }
+  .trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; text-align: center; }
+  .trust-item { }
+  .trust-item strong { font-family: 'Playfair Display', serif; display: block; font-size: 2rem; color: var(--tan-light); font-weight: 600; margin-bottom: 0.4rem; }
+  .trust-item p { font-size: 0.82rem; color: rgba(255,255,255,0.6); letter-spacing: 0.06em; text-transform: uppercase; font-weight: 300; }
+  .trust-quote { max-width: 700px; margin: 3rem auto 0; text-align: center; padding-top: 3rem; border-top: 1px solid rgba(139,115,85,0.3); }
+  .trust-quote p { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: rgba(255,255,255,0.85); line-height: 1.8; font-style: italic; }
+  .trust-quote cite { display: block; margin-top: 1rem; font-size: 0.78rem; color: var(--tan-light); letter-spacing: 0.1em; text-transform: uppercase; font-style: normal; }
 
-  /* CONTACTO */
-  .contacto { background: var(--crema); }
-  .contacto-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: start;
+  /* CONTACT */
+  .contact { background: var(--cream); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+  .contact-info .section-title { margin-bottom: 1.2rem; }
+  .contact-info p { font-size: 0.92rem; color: var(--gray); line-height: 1.8; margin-bottom: 2rem; font-weight: 300; }
+  .contact-list { list-style: none; display: flex; flex-direction: column; gap: 1.2rem; }
+  .contact-list li { display: flex; align-items: flex-start; gap: 1rem; }
+  .contact-icon { width: 40px; height: 40px; background: var(--navy); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .contact-icon svg { width: 18px; height: 18px; stroke: var(--tan-light); fill: none; stroke-width: 1.5; }
+  .contact-text strong { display: block; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--tan); font-weight: 600; margin-bottom: 0.2rem; }
+  .contact-text span { font-size: 0.9rem; color: var(--dark); font-weight: 300; }
+
+  .contact-form { background: white; padding: 3rem; border-left: 3px solid var(--tan); }
+  .form-heading { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--navy); font-weight: 600; margin-bottom: 0.3rem; }
+  .form-subheading { font-size: 0.8rem; color: var(--gray); margin-bottom: 2rem; font-weight: 300; }
+  .form-group { margin-bottom: 1.3rem; }
+  .form-group label { display: block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); margin-bottom: 0.35rem; }
+  .form-group input, .form-group select, .form-group textarea {
+    width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--border);
+    font-family: 'Source Serif 4', serif; font-size: 0.9rem; color: var(--dark);
+    background: var(--warm-white); outline: none; transition: border-color 0.2s; appearance: none;
   }
-  .info-block { margin-bottom: 2rem; }
-  .info-label {
-    font-size: 0.7rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--tierra);
-    margin-bottom: 0.3rem;
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--tan); }
+  .form-group textarea { height: 90px; resize: vertical; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .submit-btn {
+    width: 100%; background: var(--navy); color: white; border: none;
+    padding: 0.95rem; font-family: 'Source Serif 4', serif; font-size: 0.9rem;
+    letter-spacing: 0.08em; cursor: pointer; transition: background 0.2s;
   }
-  .info-value { font-size: 0.98rem; color: var(--azul); }
-  .info-value a { color: var(--azul); text-decoration: none; }
-  .info-value a:hover { color: var(--tierra); }
-  .nota-legal {
-    margin-top: 2rem;
-    padding: 1.2rem;
-    background: rgba(26,47,90,0.05);
-    border-left: 3px solid var(--tierra);
-    font-size: 0.82rem;
-    color: var(--gris);
-    font-style: italic;
-  }
-  .form-group { margin-bottom: 1.2rem; }
-  .form-group label { display: block; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris); margin-bottom: 0.4rem; }
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
-    width: 100%;
-    background: var(--blanco);
-    border: 1px solid rgba(139,115,85,0.3);
-    padding: 0.8rem 1rem;
-    font-family: 'Source Serif 4', serif;
-    font-size: 0.92rem;
-    color: var(--azul);
-    outline: none;
-    transition: border-color 0.3s;
-  }
-  .form-group input:focus,
-  .form-group select:focus,
-  .form-group textarea:focus { border-color: var(--tierra); }
-  .form-group textarea { height: 100px; resize: vertical; }
-  .btn-submit {
-    width: 100%;
-    background: var(--azul);
-    color: var(--crema);
-    border: none;
-    padding: 1rem;
-    font-family: 'Source Serif 4', serif;
-    font-size: 0.8rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-  .btn-submit:hover { background: var(--azul-medio); }
+  .submit-btn:hover { background: var(--tan); }
 
   /* FOOTER */
-  footer {
-    background: var(--azul);
-    color: rgba(242,240,235,0.5);
-    padding: 2.5rem 3rem;
-    text-align: center;
-  }
-  .footer-name {
-    font-family: 'Playfair Display', serif;
-    color: var(--tierra-claro);
-    font-size: 1.1rem;
-    display: block;
-    margin-bottom: 0.3rem;
-  }
-  .footer-sub { font-size: 0.78rem; letter-spacing: 0.1em; }
+  footer { background: var(--navy); color: rgba(255,255,255,0.45); padding: 3rem 6%; }
+  .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; border-top: 1px solid rgba(139,115,85,0.3); padding-top: 2rem; }
+  .footer-brand { font-family: 'Playfair Display', serif; color: white; font-size: 1.1rem; }
+  .footer-brand span { color: var(--tan-light); }
+  .footer-copy { font-size: 0.8rem; text-align: center; line-height: 1.7; }
+  .footer-right { font-size: 0.78rem; text-align: right; }
+  .footer-right a { color: rgba(255,255,255,0.35); text-decoration: none; }
+  .footer-right a:hover { color: var(--tan-light); }
 
-  /* RESPONSIVE */
-  @media (max-width: 768px) {
-    nav { padding: 0 1.5rem; }
-    .nav-links { display: none; }
-    .hero { grid-template-columns: 1fr; min-height: auto; }
-    .hero-right { height: 280px; }
-    .hero-left { padding: 3rem 1.5rem; }
-    section { padding: 3.5rem 1.5rem; }
-    .quiensoy-grid,
-    .contacto-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-    .sello-strip { gap: 1rem; padding: 1rem 1.5rem; }
-    .proceso-list { grid-template-columns: 1fr 1fr; }
+  @media (max-width: 900px) {
+    .hero-content { grid-template-columns: 1fr; gap: 3rem; }
+    .hero-right { display: none; }
+    .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .footer-inner { flex-direction: column; text-align: center; }
+    .footer-right { text-align: center; }
+    .form-row { grid-template-columns: 1fr; }
   }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
-  <a href="#" class="nav-brand">
-    <span class="nav-brand-name">Notaría Sandra M. Medina</span>
-    <span class="nav-brand-sub">Notaria de Madrid · Distrito Salamanca</span>
-  </a>
+  <div class="nav-brand">
+    <div class="nav-name">Notaría Sandra Medina</div>
+    <div class="nav-subtitle">Notaría · Barrio de Salamanca · Madrid</div>
+  </div>
   <ul class="nav-links">
     <li><a href="#servicios">Servicios</a></li>
-    <li><a href="#notaria">La Notaria</a></li>
-    <li><a href="#proceso">Proceso</a></li>
-    <li><a href="#contacto" class="nav-cta">Cita Previa</a></li>
+    <li><a href="#proceso">Cómo funciona</a></li>
+    <li><a href="#contacto">Contacto</a></li>
   </ul>
+  <div class="nav-seal">
+    <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+  </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-left">
-    <span class="hero-tag">Notaría en Salamanca · Madrid</span>
-    <h1>Seguridad jurídica<br>con <em>tradición</em><br>y rigor</h1>
-    <p class="hero-desc">Servicios notariales de confianza en el corazón del barrio Salamanca. Más de 20 años protegiendo sus intereses jurídicos.</p>
-    <div class="hero-actions">
-      <a href="tel:917819249" class="btn-gold">Llamar: 917 819 249</a>
-      <a href="#contacto" class="btn-outline">Solicitar Cita Previa</a>
+<div class="hero" id="inicio">
+  <div class="hero-bg-text">FE PÚBLICA</div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-ornament">
+        <div class="ornament-line"></div>
+        <span>Fe pública · Barrio de Salamanca · Madrid</span>
+      </div>
+      <h1>Seguridad jurídica para los momentos que <em>más importan</em></h1>
+      <p>Notaría colegiada en el corazón del Barrio de Salamanca. Escrituras, herencias, poderes notariales y actos societarios con la mayor garantía legal. Presupuesto online en 24 horas.</p>
+      <div class="hero-actions">
+        <a href="#contacto" class="btn-tan">Solicitar presupuesto</a>
+        <a href="#servicios" class="btn-outline">Ver servicios</a>
+      </div>
+      <div class="hero-features">
+        <div class="hero-feature">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Colegiada ICAM · Colegio Notarial de Madrid</span>
+        </div>
+        <div class="hero-feature">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>Cita en 48 horas · Urgencias en el mismo día</span>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="hero-right">
-    <img src="https://images.unsplash.com/photo-1568992688065-536aad8a12f6?w=900&q=80&auto=format&fit=crop" alt="Despacho Notarial Madrid">
-    <div class="hero-right-overlay"></div>
-  </div>
-</section>
-
-<!-- SELLO -->
-<div class="sello-strip">
-  <div class="sello-item">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-    Notaria colegiada
-  </div>
-  <div class="sello-item">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-    Fe pública garantizada
-  </div>
-  <div class="sello-item">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-    Documentación en 24-48h
-  </div>
-  <div class="sello-item">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-    Atención personalizada
+    <div class="hero-right">
+      <div class="notary-card">
+        <div class="notary-seal">
+          <div class="seal-circle">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 12h8M8 8h8M8 16h5"/></svg>
+          </div>
+        </div>
+        <h3>Notaría Sandra Medina</h3>
+        <div class="subtitle">Notaria · Colegio Notarial de Madrid</div>
+        <ul class="notary-services-list">
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Compraventas e hipotecas</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Herencias y testamentos</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Poderes notariales</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Constitución de sociedades</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Actas y legitimaciones</li>
+        </ul>
+        <button class="notary-card-cta">Solicitar presupuesto online</button>
+      </div>
+    </div>
   </div>
 </div>
 
-<!-- SERVICIOS -->
-<section class="servicios" id="servicios">
-  <div class="container">
-    <span class="section-label">Servicios Notariales</span>
-    <h2 class="section-title">Todos los actos notariales bajo un mismo techo</h2>
+<section class="services" id="servicios">
+  <div class="services-header">
+    <div class="section-label">Áreas de práctica</div>
     <div class="divider"></div>
-    <div class="servicios-grid">
-      <div class="servicio-card">
-        <div class="servicio-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        </div>
-        <h3 class="servicio-title">Compraventas Inmobiliarias</h3>
-        <p class="servicio-desc">Escrituras de compraventa, hipotecas y transmisiones de todo tipo de inmuebles. Gestión integral con registro.</p>
+    <h2 class="section-title">Servicios notariales con <em>rigor y precisión</em></h2>
+    <p class="section-sub">Cada acto notarial es único. Preparamos cada escritura con la máxima atención jurídica para que su validez sea incuestionable.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
       </div>
-      <div class="servicio-card">
-        <div class="servicio-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
-        <h3 class="servicio-title">Herencias y Sucesiones</h3>
-        <p class="servicio-desc">Declaraciones de herederos, aceptación de herencias, partición y adjudicación de bienes con total seguridad jurídica.</p>
+      <h3>Compraventas Inmobiliarias</h3>
+      <p>Formalización de compraventas de inmuebles, locales y solares. Revisión integral del estado registral, cargas y condiciones de la operación.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
       </div>
-      <div class="servicio-card">
-        <div class="servicio-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-        </div>
-        <h3 class="servicio-title">Testamentos</h3>
-        <p class="servicio-desc">Testamento abierto, cerrado u ológrafo. Asesoramiento completo para una planificación sucesoria con plenas garantías.</p>
+      <h3>Herencias y Testamentos</h3>
+      <p>Otorgamiento y protocolización de testamentos. Declaración de herederos, aceptación y adjudicación de herencia con plena seguridad jurídica.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
       </div>
-      <div class="servicio-card">
-        <div class="servicio-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-        </div>
-        <h3 class="servicio-title">Poderes Notariales</h3>
-        <p class="servicio-desc">Poderes generales, especiales, apud acta y preventivos. Emisión rápida y eficaz para cualquier gestión.</p>
+      <h3>Poderes Notariales</h3>
+      <p>Poderes generales y especiales para representación legal, venta de inmuebles, gestiones bancarias o tramitaciones administrativas.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
       </div>
-      <div class="servicio-card">
-        <div class="servicio-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-        </div>
-        <h3 class="servicio-title">Actas Notariales</h3>
-        <p class="servicio-desc">Actas de presencia, notoriedad, manifestaciones, protocolización de documentos y diligencias varias.</p>
+      <h3>Constitución de Sociedades</h3>
+      <p>Constitución de S.L., S.A. y demás formas societarias. Modificaciones estatutarias, ampliaciones de capital y actas de junta.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 12h8M8 8h8M8 16h5"/></svg>
       </div>
-      <div class="servicio-card">
-        <div class="servicio-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        </div>
-        <h3 class="servicio-title">Constitución de Sociedades</h3>
-        <p class="servicio-desc">SL, SA y otras formas societarias. Estatutos, ampliaciones de capital, modificaciones y disoluciones mercantiles.</p>
+      <h3>Actas y Legitimaciones</h3>
+      <p>Legitimación de firmas, compulsas de documentos, actas notariales de presencia y estado. Apostilla de La Haya para documentos internacionales.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
       </div>
+      <h3>Hipotecas y Refinanciaciones</h3>
+      <p>Formalización de préstamos hipotecarios, novaciones, subrogaciones y cancelaciones. Coordinación con entidades financieras incluida.</p>
     </div>
   </div>
 </section>
 
-<!-- QUIÉN SOY -->
-<section class="quiensoy" id="notaria">
-  <div class="container">
-    <div class="quiensoy-grid">
-      <div class="quiensoy-img">
-        <img src="https://images.unsplash.com/photo-1556157382-97eda2f9e2bf?w=600&q=80&auto=format&fit=crop" alt="Notaria Sandra Medina">
-      </div>
-      <div>
-        <span class="colegio-badge">Ilustre Colegio Notarial de Madrid</span>
-        <span class="section-label">La Notaria</span>
-        <h2 class="section-title">Sandra María Medina Gonzálvez</h2>
-        <div class="divider"></div>
-        <p class="section-body" style="margin-bottom:1.2rem">Notaria por oposición, adscrita al Ilustre Colegio Notarial de Madrid. Con más de dos décadas de ejercicio en el barrio de Salamanca, ha acompañado a miles de familias y empresas en los momentos más importantes de sus vidas.</p>
-        <p class="section-body" style="margin-bottom:1.2rem">Su despacho combina la seriedad y el rigor que exige la función notarial con una atención humana y comprensible. Cada acto notarial es explicado con claridad para que usted tome decisiones informadas.</p>
-        <p class="section-body">Miembro del Consejo General del Notariado. Especialista en derecho inmobiliario y sucesiones internacionales.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROCESO -->
-<section class="proceso" id="proceso">
-  <div class="container">
-    <span class="section-label">Cómo funciona</span>
-    <h2 class="section-title">Su trámite, paso a paso</h2>
+<section class="process" id="proceso">
+  <div class="process-header">
+    <div class="section-label">Proceso</div>
     <div class="divider"></div>
-    <p class="section-body">Desde la primera consulta hasta la entrega de la escritura, le acompañamos en cada etapa.</p>
-    <div class="proceso-list">
-      <div class="proceso-item">
-        <div class="proceso-num">01</div>
-        <h4 class="proceso-item-title">Consulta previa</h4>
-        <p class="proceso-item-desc">Llámenos o escríbanos. Le orientamos sin compromiso sobre el trámite y la documentación necesaria.</p>
-      </div>
-      <div class="proceso-item">
-        <div class="proceso-num">02</div>
-        <h4 class="proceso-item-title">Cita y documentación</h4>
-        <p class="proceso-item-desc">Fijamos fecha y le indicamos exactamente los documentos que debe aportar para su trámite.</p>
-      </div>
-      <div class="proceso-item">
-        <div class="proceso-num">03</div>
-        <h4 class="proceso-item-title">Firma ante Notaria</h4>
-        <p class="proceso-item-desc">Acto solemne con plenas garantías jurídicas. Le explicamos cada cláusula antes de firmar.</p>
-      </div>
-      <div class="proceso-item">
-        <div class="proceso-num">04</div>
-        <h4 class="proceso-item-title">Gestión registral</h4>
-        <p class="proceso-item-desc">Presentación en Registro y entrega de copia autorizada. Seguimiento hasta la inscripción definitiva.</p>
-      </div>
+    <h2 class="section-title">Cómo trabajamos</h2>
+    <p class="section-sub">La seriedad notarial no riñe con la agilidad. Hemos diseñado un proceso digital para que el trámite sea claro y rápido desde el primer contacto.</p>
+  </div>
+  <div class="process-grid">
+    <div class="process-step">
+      <div class="process-num">01</div>
+      <h4>Solicitud de presupuesto online</h4>
+      <p>Complete el formulario con los detalles de su escritura. Recibirá presupuesto detallado y desglose de aranceles en menos de 24 horas.</p>
+    </div>
+    <div class="process-step">
+      <div class="process-num">02</div>
+      <h4>Documentación y revisión previa</h4>
+      <p>Nuestro equipo revisa toda la documentación antes de la firma para garantizar que no haya contingencias el día del otorgamiento.</p>
+    </div>
+    <div class="process-step">
+      <div class="process-num">03</div>
+      <h4>Firma ante notario</h4>
+      <p>Formalización de la escritura con toda la seguridad jurídica. Explicación clara de cada cláusula antes de la firma.</p>
+    </div>
+    <div class="process-step">
+      <div class="process-num">04</div>
+      <h4>Tramitación y registro</h4>
+      <p>Presentación telemática en el Registro y en la Administración. Entrega de copia autorizada y seguimiento del expediente.</p>
     </div>
   </div>
 </section>
 
-<!-- CONTACTO -->
-<section class="contacto" id="contacto">
-  <div class="container">
-    <div class="contacto-grid">
-      <div>
-        <span class="section-label">Contacto</span>
-        <h2 class="section-title">Solicite cita previa</h2>
-        <div class="divider"></div>
-        <div class="info-block">
-          <div class="info-label">Teléfono</div>
-          <div class="info-value"><a href="tel:917819249">917 819 249</a></div>
-        </div>
-        <div class="info-block">
-          <div class="info-label">Correo</div>
-          <div class="info-value"><a href="mailto:smmedina@correonotarial.org">smmedina@correonotarial.org</a></div>
-        </div>
-        <div class="info-block">
-          <div class="info-label">Ubicación</div>
-          <div class="info-value">Barrio de Salamanca, Madrid</div>
-        </div>
-        <div class="info-block">
-          <div class="info-label">Horario de atención</div>
-          <div class="info-value">Lunes a Viernes, 9:30 – 14:00 y 16:00 – 19:00</div>
-        </div>
-        <div class="nota-legal">
-          Los honorarios notariales están regulados por arancel oficial. El presupuesto previo es gratuito y sin compromiso.
-        </div>
-      </div>
-      <div>
-        <form onsubmit="return false;">
-          <div class="form-group">
-            <label>Nombre completo</label>
-            <input type="text" placeholder="Su nombre y apellidos">
-          </div>
-          <div class="form-group">
-            <label>Teléfono de contacto</label>
-            <input type="tel" placeholder="91X XXX XXX">
-          </div>
-          <div class="form-group">
-            <label>Correo electrónico</label>
-            <input type="email" placeholder="su@email.com">
-          </div>
-          <div class="form-group">
-            <label>Tipo de gestión</label>
-            <select>
-              <option value="">Seleccione el tipo de trámite</option>
-              <option>Compraventa inmobiliaria</option>
-              <option>Herencia o sucesión</option>
-              <option>Testamento</option>
-              <option>Poder notarial</option>
-              <option>Constitución de sociedad</option>
-              <option>Acta notarial</option>
-              <option>Otro trámite</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Mensaje o consulta</label>
-            <textarea placeholder="Descríbanos brevemente su necesidad..."></textarea>
-          </div>
-          <button type="submit" class="btn-submit">Enviar Solicitud</button>
-        </form>
-      </div>
+<section class="trust-section">
+  <div class="trust-inner">
+    <div class="trust-header">
+      <div class="section-label" style="color:var(--tan-light)">Confianza</div>
+      <h2 class="section-title" style="color:white; margin-bottom:0">Una trayectoria construida sobre rigor</h2>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-item"><strong>+20</strong><p>Años de ejercicio</p></div>
+      <div class="trust-item"><strong>+8.000</strong><p>Escrituras formalizadas</p></div>
+      <div class="trust-item"><strong>48h</strong><p>Respuesta garantizada</p></div>
+      <div class="trust-item"><strong>100%</strong><p>Tramitación digital</p></div>
+    </div>
+    <div class="trust-quote">
+      <p>"La función notarial no consiste solo en dar fe pública. Consiste en anticipar problemas, proteger a las partes y garantizar que cada documento resista el paso del tiempo."</p>
+      <cite>— Sandra Medina, Notaria</cite>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<section class="contact" id="contacto">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="section-label">Contacto</div>
+      <div class="divider"></div>
+      <h2 class="section-title">Solicitar presupuesto sin compromiso</h2>
+      <p>Reciba presupuesto detallado y desglose de aranceles notariales en menos de 24 horas. Sin sorpresas, con transparencia total de costes desde el primer contacto.</p>
+      <ul class="contact-list">
+        <li>
+          <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div class="contact-text"><strong>Dirección</strong><span>Calle Serrano 45, 2º Planta · Barrio de Salamanca · Madrid 28001</span></div>
+        </li>
+        <li>
+          <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.06 6.06l1.12-1.12a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div class="contact-text"><strong>Teléfono</strong><span>+34 91 XXX XX XX</span></div>
+        </li>
+        <li>
+          <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div class="contact-text"><strong>Email</strong><span>notaria@sandramedina.es</span></div>
+        </li>
+        <li>
+          <div class="contact-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div class="contact-text"><strong>Horario</strong><span>Lunes a Viernes 9:00–14:00 y 16:00–19:00</span></div>
+        </li>
+      </ul>
+    </div>
+    <div class="contact-form">
+      <div class="form-heading">Solicitud de presupuesto</div>
+      <div class="form-subheading">Respuesta en menos de 24 horas · Presupuesto sin compromiso</div>
+      <form>
+        <div class="form-row">
+          <div class="form-group"><label>Nombre completo</label><input type="text" placeholder="D./Dña."></div>
+          <div class="form-group"><label>Teléfono</label><input type="tel" placeholder="+34 9XX XXX XXX"></div>
+        </div>
+        <div class="form-group"><label>Email</label><input type="email" placeholder="correo@email.com"></div>
+        <div class="form-group">
+          <label>Tipo de trámite</label>
+          <select>
+            <option>Compraventa inmobiliaria</option>
+            <option>Herencia / Testamento</option>
+            <option>Poder notarial</option>
+            <option>Constitución de sociedad</option>
+            <option>Hipoteca / Préstamo</option>
+            <option>Acta / Legitimación de firma</option>
+            <option>Otro trámite notarial</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Descripción del trámite</label>
+          <textarea placeholder="Describa brevemente el acto notarial que necesita para poder prepararle un presupuesto ajustado..."></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Solicitar presupuesto gratuito</button>
+      </form>
+    </div>
+  </div>
+</section>
+
 <footer>
-  <span class="footer-name">Notaría Sandra M. Medina Gonzálvez</span>
-  <p class="footer-sub">© 2026 · Notaria de Madrid · Barrio de Salamanca · Tel. 917 819 249</p>
+  <div class="footer-inner">
+    <div class="footer-brand">Notaría <span>Sandra Medina</span></div>
+    <div class="footer-copy">© 2026 Notaría Sandra Medina · Barrio de Salamanca · Madrid<br>Colegiada Colegio Notarial de Madrid · Todos los derechos reservados</div>
+    <div class="footer-right">
+      <a href="#">Aviso Legal</a> · <a href="#">Política de Privacidad</a><br>
+      <span style="color:rgba(139,115,85,0.6); font-size:0.75rem; margin-top:4px; display:block;">Demo profesional — diseño institucional desde 1.500€</span>
+    </div>
+  </div>
 </footer>
 
 </body>
