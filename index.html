@@ -22,6 +22,7 @@
   }
   html { scroll-behavior: smooth; }
   body { font-family: 'Source Serif 4', serif; color: var(--dark); background: var(--warm-white); }
+  img { display: block; width: 100%; }
 
   /* NAV */
   nav {
@@ -97,7 +98,25 @@
   .hero-feature svg { width: 16px; height: 16px; stroke: var(--tan); fill: none; stroke-width: 2; }
   .hero-feature span { font-size: 0.8rem; color: rgba(255,255,255,0.6); letter-spacing: 0.04em; }
 
-  .hero-right { position: relative; z-index: 1; }
+  .hero-right { position: relative; z-index: 1; display: grid; gap: 1rem; }
+  .hero-portrait {
+    min-height: 250px;
+    overflow: hidden;
+    border-top: 4px solid var(--tan);
+    position: relative;
+    box-shadow: 0 20px 48px rgba(13, 26, 49, 0.22);
+  }
+  .hero-portrait::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(26,47,90,0.08) 0%, rgba(26,47,90,0.28) 100%);
+  }
+  .hero-portrait img {
+    height: 100%;
+    min-height: 250px;
+    object-fit: cover;
+  }
   .notary-card {
     background: var(--cream); padding: 3rem 2.5rem;
     border-top: 4px solid var(--tan); position: relative;
@@ -266,6 +285,9 @@
       </div>
     </div>
     <div class="hero-right">
+      <figure class="hero-portrait">
+        <img src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=1400&q=80&fit=crop" alt="Firma de documentación en un entorno notarial y corporativo" />
+      </figure>
       <div class="notary-card">
         <div class="notary-seal">
           <div class="seal-circle">
